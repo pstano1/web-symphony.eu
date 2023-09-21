@@ -1,0 +1,33 @@
+@import '_variables.css';
+
+.footer_wrapper {
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--antiflash-white);
+    background-color: var(--rich-black);
+}
+
+.logo {
+    color: var(--antiflash-white);
+}
+
+.footer_content {
+    display: flex;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 720px) {
+    .footer_content {
+        flex-direction: column;
+    }
+
+    .footer_content > div {
+        margin-top: 1rem;
+    }
+}
+
+.footer_content > div {
+    flex: 1;
+}

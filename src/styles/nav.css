@@ -1,0 +1,29 @@
+@import '_variables.css';
+
+.wrapper {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    background-color: var(--rich-black);
+}
+
+.logo {
+    color: var(--antiflash-white);
+    font-size: 2rem;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.nav_link {
+    padding: 1rem;
+    cursor: pointer;
+    color: var(--antiflash-white);
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+.nav_link:hover {
+    color: var(--aquamarine);
+}

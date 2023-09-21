@@ -1,0 +1,29 @@
+@import '_variables.css';
+
+.content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--antiflash-white);
+    background-color: var(--rich-black);
+}
+
+.avatar {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 3px solid var(--aquamarine);
+}
+
+.header_title {
+    margin-top: .5rem;
+    letter-spacing: .04rem;
+}
+
+.sec {
+    padding: 3rem;
+    display: flex;
+    text-align: justify;
+}
