@@ -4,7 +4,7 @@ import '../styles/footer.css'
 var Footer = {
     view: function (vnode) {
         return m('div.footer_wrapper',
-            m('h3.logo', 'Logo'),
+            m('img.footer_logo', { src: '../public/assets/gfx/ws_logo.png', alt: 'logo' }),
             m('div.footer_content',
                 m('div', 
                     m('p', 'Web Symphony Studio Paweł Stano'),

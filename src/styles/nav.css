@@ -1,7 +1,8 @@
 @import '_variables.css';
 
 .wrapper {
-    width: 100%;
+    width: auto;
+    height: 80px;
     padding: 1rem;
     display: flex;
     background-color: var(--rich-black);
@@ -25,5 +26,5 @@
 }
 
 .nav_link:hover {
-    color: var(--aquamarine);
+    color: var(--light-green);
 }

@@ -10,20 +10,69 @@
 }
 
 .avatar {
-    width: 8rem;
-    height: 8rem;
+    width: 9rem;
+    height: 9rem;
+    margin-top: 2rem;
     border-radius: 50%;
-    object-fit: contain;
-    border: 3px solid var(--aquamarine);
+    object-fit: cover;
+    border: .25rem solid var(--light-green);
 }
 
 .header_title {
     margin-top: .5rem;
+    margin-bottom: .5rem;
     letter-spacing: .04rem;
 }
 
 .sec {
-    padding: 3rem;
+    width: 50rem;
     display: flex;
     text-align: justify;
+}
+
+.vertical_sec {
+    width: 50rem;
+    display: flex;
+    text-align: justify;
+    flex-direction: column;
+}
+
+.section_title {
+    text-align: left;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.element_title {
+    font-weight: bolder;
+}
+
+.element_subtitle {
+    font-weight: bolder;
+}
+
+.chip_row {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.chip {
+    margin-right: .5rem;
+    padding: .5rem 1rem;
+    border-radius: 1.5rem;
+    max-width: fit-content;
+    color: var(--rich-black);
+    background-color: var(--light-green);
+    background: linear-gradient(45deg, var(--light-green) 40%, var(--aquamarine) 100%)
+}
+
+@media (max-width: 1024px) {
+    .chip {
+        margin-top: .5rem;
+    }
+
+    .chip_row {
+        flex-direction: column;
+    }
 }

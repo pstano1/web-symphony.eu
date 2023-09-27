@@ -9,7 +9,9 @@
     background-color: var(--rich-black);
 }
 
-.logo {
+.footer_logo {
+    width: 150px;
+    height: auto;
     color: var(--antiflash-white);
 }
 
