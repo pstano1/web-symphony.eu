@@ -9,4 +9,5 @@ body, * {
 
 .main {
     width: 100vw;
+    overflow-x: hidden;
 }
