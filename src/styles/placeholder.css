@@ -1,0 +1,22 @@
+@import '../styles/_variables.css';
+
+.holder_wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--rich-black);
+}
+
+.holder_wrapper > * {
+    width: 120px;
+    height: auto;
+}
+
+.holder_wrapper > p {
+    font-size: 1.3rem;
+    width: fit-content;
+    color: var(--antiflash-white);
+}

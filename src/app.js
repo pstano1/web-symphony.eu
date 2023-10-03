@@ -6,12 +6,14 @@ import About from './pages/about'
 import Nav from './components/nav'
 import Footer from './components/footer'
 
+import Placeholder from './pages/placeholder'
+
 const Layout = {
     view: (vnode) => {
         return m('div.main', [
-            m(Nav), 
+            // m(Nav), 
             m(vnode.attrs.contentComponent),
-            m(Footer)
+            // m(Footer)
         ])
     }
 }
@@ -19,12 +21,12 @@ const Layout = {
 m.route(document.body, '/', {
     '/': {
         render: () => {
-            return m(Layout, { contentComponent: Main })
+            return m(Layout, { contentComponent: Placeholder })
         }
     },
-    '/about-me': {
-        render: () => {
-            return m(Layout, { contentComponent: About })
-        }
-    }
+    // '/about-me': {
+    //     render: () => {
+    //         return m(Layout, { contentComponent: About })
+    //     }
+    // }
 })
