@@ -1,8 +1,8 @@
 import m from 'mithril'
 import '../styles/footer.css'
-import GitHubIcon from '../../public/assets/icons/github.svg'
-import GitLabIcon from '../../public/assets/icons/gitlab.svg'
-import linkedInIcon from '../../public/assets/icons/linkedin.svg'
+import GitHubIcon from '../../bin/images/icons/github.svg'
+import GitLabIcon from '../../bin/images/icons/gitlab.svg'
+import linkedInIcon from '../../bin/images/icons/linkedin.svg'
 
 var Footer = {
     view: function (vnode) {
