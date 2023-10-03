@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "webpack ./src/app.js --output-path ./bin --watch"
+    "start": "webpack ./src/app.js --output-path ./bin --watch",
+    "build": "webpack ./src/app.js --output-path ./bin"
   },
   "keywords": [],
   "author": "Paweł Stano",
