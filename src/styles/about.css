@@ -3,10 +3,12 @@
 .content {
     width: 100%;
     display: flex;
+    padding-top: 80px;
     align-items: center;
+    padding-bottom: none;
     flex-direction: column;
-    color: var(--antiflash-white);
-    background-color: var(--rich-black);
+    color: var(--rich-black);
+    background-color: var(--antiflash-white);
 }
 
 .avatar {
@@ -16,6 +18,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: .25rem solid var(--light-green);
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 .summary {
@@ -30,11 +33,18 @@
     letter-spacing: .04rem;
 }
 
-.sec {
+.text_sec {
     width: 100%;
-    display: flex;
+}
+
+.sec {
+    gap: 1rem;
+    width: 100%;
+    display: grid;
     max-width: 50rem;
     text-align: justify;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(144px, 1fr));
 }
 
 .vertical_sec {
@@ -67,13 +77,15 @@
 }
 
 .chip {
+    font-weight: bolder;
     margin-right: .5rem;
     padding: .5rem 1rem;
     border-radius: 1.5rem;
     max-width: fit-content;
-    color: var(--rich-black);
+    color: var(--antiflash-white);
     background-color: var(--light-green);
-    background: linear-gradient(45deg, var(--light-green) 40%, var(--aquamarine) 100%)
+    box-shadow: 1px 1px 2px 0 rgba(112, 240, 154, 0.3);
+    background: linear-gradient(45deg, var(--light-green) 40%, var(--aquamarine) 100%);
 }
 
 @media (max-width: 1024px) {
@@ -84,4 +96,69 @@
     .chip_row {
         flex-direction: column;
     }
+}
+
+.appreticeship_list {
+    list-style: none;
+}
+
+.appreticeship_list > li::before {
+    width: 1rem;
+    content: "\2022";
+    font-weight: bold;
+    display: inline-block; 
+    color: var(--light-green);
+}
+
+.appreticeship_list > li > h4 {
+    display: inline-block;
+}
+
+.appreticeship_list > li > p {
+    margin-left: 1rem;
+    color: var(--rich-black);
+}
+
+.company_link {
+    position: relative;
+    text-decoration: none;
+    color: var(--rich-black);
+    transition: color .3s linear;
+}
+
+.company_link:hover {
+    color: var(--light-green);
+}
+
+.external_link {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--light-green);
+}
+
+.icon_row {
+    display: flex;
+    margin: .5rem 0;
+}
+
+.icon_row > div {
+    display: flex;
+    margin: 0 .5rem;
+    align-items: center;
+}
+
+.icon_row > div > img {
+    width: 2rem;
+    filter: invert(70%) sepia(84%) saturate(249%) hue-rotate(85deg) brightness(100%) contrast(96%);
+}
+
+.icon_row > div > p {
+    font-size: 1.15rem;
+}
+
+.decor_sec {
+    width: 100%;
+    height: 250px;
+    position: relative;
 }

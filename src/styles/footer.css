@@ -7,6 +7,13 @@
     flex-direction: column;
     color: var(--antiflash-white);
     background-color: var(--rich-black);
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 720px) {
+    .footer_wrapper {
+        box-shadow: none;
+    }
 }
 
 .footer_logo {
@@ -61,4 +68,31 @@
     margin: 1rem 0;
     display: block;
     background-color: var(--antiflash-white);
+}
+
+.copyright {
+    text-align: center;
+    color: var(--antiflash-white);
+}
+
+.copyright a {
+    text-decoration: none;
+    color: var(--light-green);
+}
+
+.footer_link {
+    display: flex;
+    margin: .3rem 0;
+    text-decoration: none;
+    transition: color .2s linear;
+    color: var(--antiflash-white);
+}
+
+.footer_link:hover {
+    color: var(--light-green);
+}
+
+.contact_link_icon {
+    margin-right: 1rem;
+    filter: invert(83%) sepia(1%) saturate(455%) hue-rotate(147deg) brightness(117%) contrast(96%);
 }
