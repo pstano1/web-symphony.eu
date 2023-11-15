@@ -3,14 +3,27 @@
 }
 
 .portfolio {
-    height: 70vh;
     display: flex;
+    min-height: 70vh;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .portfolio > h1 {
-    color: #cbcbcb;
+    text-align: center;
+    color: var(--rich-black);
+    max-width: 40vw;
+}
+
+@media screen and (max-width: 1024px) {
+    .portfolio {
+        padding-top: 80px;
+        flex-direction: column-reverse;
+    }
+
+    .portfolio > h1 {
+        max-width: none;
+    }
 }
 
 .contact_section {

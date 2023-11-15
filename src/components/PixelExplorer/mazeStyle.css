@@ -1,0 +1,258 @@
+@import '../../styles/_variables.css';
+
+.maze_wrapper {
+    display: flex;
+    padding: 2rem 4rem;
+    position: relative;
+    border-radius: 1rem;
+    height: fit-content;
+    flex-direction: column;
+    background: var(--antiflash-white);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 1024px) {
+    .maze_wrapper {
+        padding: 2rem;
+    }
+}
+
+.maze {
+    width: 20rem;
+    box-sizing: content-box;
+    position: relative;
+    border: 1px solid var(--silver);
+}
+
+.maze_tile {
+    width: 2rem;
+    height: 2rem;
+    z-index: 998;
+    position: relative;
+    display: inline-block;
+    background-color: var(--antiflash-white);
+}
+
+.current_tile {
+    z-index: 1001;
+}
+
+.wall_north {
+    border-top: .05rem solid var(--silver);
+}
+
+.wall_east {
+    border-right: .05rem solid var(--silver);
+}
+
+.wall_south {
+    border-bottom: .05rem solid var(--silver);
+}
+
+.wall_west {
+    border-left: .05rem solid var(--silver);
+}
+
+.player {
+    top: .3rem;
+    left: .3rem;
+    z-index: 1001;
+    width: 1.4rem;
+    height: 1.4rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--light-green);
+}
+
+.to_west {
+    animation: toWest .3s;
+}
+
+@keyframes toWest {
+    from {
+        transform: translateX(2rem);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.to_north {
+    animation: toNorth .3s;
+}
+
+@keyframes toNorth {
+    from {
+        transform: translateY(2rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.to_east {
+    animation: toEast .3s;
+}
+
+@keyframes toEast {
+    from {
+        transform: translateX(-2rem);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.to_south {
+    animation: toSouth .3s;
+}
+
+@keyframes toSouth {
+    from {
+        transform: translateY(-2rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.mobile_controls {
+    right: 25vw;
+    width: 50vw;
+    height: 50vw;
+    bottom: 2rem;
+    z-index: 1000;
+    display: none;
+    position: fixed;
+    max-width: 207px;
+    max-height: 207px;
+    border-radius: 50%;
+    background-color: var(--silver);
+}
+
+.mobile_controls > div { 
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    backdrop-filter: blur(20px);
+}
+
+.arrow {
+    width: 18vw;
+    height: 18vw;
+    border: none;
+    max-width: 75px;
+    max-height: 75px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--silver);
+}
+
+.arrow > img {
+    width: 70%;
+    filter: invert(83%) sepia(1%) saturate(455%) hue-rotate(147deg) brightness(117%) contrast(96%);
+}
+
+.west {
+    top: 16vw;
+    left: .2rem;
+    transform: rotate(-90deg);
+}
+
+.north {
+    top: .2rem;
+    left: 16vw;
+}
+
+.east {
+    top: 16vw;
+    right: .2rem;
+    transform: rotate(90deg);
+}
+
+.south {
+    left: 16vw;
+    bottom: .2rem;
+    transform: rotate(180deg);
+}
+
+.close {
+    top: -4vw;
+    left: -4vw;
+    width: 12vw;
+    height: 12vw;
+}
+
+@media screen and (max-width: 1024px) {
+    .west, .east {
+        top: calc(50% - 37.5px);
+    }
+
+    .north, .south {
+        left: calc(50% - 37.5px);
+    }
+
+    .mobile_controls {
+        right: 2rem;
+    }
+}
+
+.controls_button {
+    cursor: pointer;
+    font-size: .9rem;
+    width: fit-content;
+    padding: .5rem 1rem;
+    font-weight: bolder;
+    border-radius: 1.5rem;
+    letter-spacing: .03rem;
+    margin: 1rem auto 0 auto;
+    text-transform: uppercase;
+    transition: all .3s linear;
+    color: var(--antiflash-white);
+    border: .15rem solid var(--light-green);
+    background: linear-gradient(45deg, var(--light-green) 40%, var(--aquamarine) 100%);
+}
+
+.controls_button:hover {
+    color: var(--light-green);
+    background: var(--antiflash-white);
+}
+
+.flag {
+    top: .25rem;
+    left: .25rem;
+    width: 1.5rem;
+    display: flex;
+    position: absolute;
+}
+
+.game_over {
+    top: 0;
+    left: 0;
+    opacity: .9;
+    width: 100%;
+    height: 100%;
+    z-index: 1002;
+    display: none;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--rich-black);
+}
+
+.game_over > h3 {
+    font-size: 1.4rem;
+    color: var(--antiflash-white);
+}
+
+.replay_button {
+    cursor: pointer;
+    margin-top: 1rem;
+    filter: invert(83%) sepia(1%) saturate(455%) hue-rotate(147deg) brightness(117%) contrast(96%);
+}
+
+.visible {
+    display: flex;
+}

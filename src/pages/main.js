@@ -1,5 +1,6 @@
 import m from 'mithril'
 import '../styles/main.css'
+import PixelExplorer from '../components/pixelExplorer'
 
 var Main = {
     handleInput: (event) => {
@@ -16,7 +17,8 @@ var Main = {
     view: (vnode) => {
         return m('div.main_content',
             m('section.portfolio',
-                m('h1', 'Portfolio coming soon...')
+                m(PixelExplorer),
+                m('h1', 'Portfolio is coming soon. In the meantime here\'s a little game'),
             ),
             m('section.contact_section#contact',
                 m('div',
