@@ -1,6 +1,6 @@
 import m from 'mithril'
 import '../styles/main.css'
-import PixelExplorer from '../components/pixelExplorer'
+import PixelExplorer from '../components/PixelExplorer'
 import SuccessIcon from '../../bin/images/icons/check-circle.svg'
 import ErrorIcon from '../../bin/images/icons/alert-circle.svg'
 
