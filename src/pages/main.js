@@ -48,7 +48,7 @@ var Main = {
                     m('h1', 'Want to work together?'),
                     m('h1', 'Shoot me an e-mail')
                 ),
-                m('form', { name: 'contact', dataNetlify: true, netlify: true, method: 'POST', onsubmit: () => Main.handleSubmit(event) },
+                m('form', { name: 'contact', 'data-netlify': true, netlify: true, method: 'POST', onsubmit: (event) => Main.handleSubmit(event) },
                     m('h2', 'contact'),
                     Main.isSent ?
                         Main.isSuccess ? m('img.success', { src: SuccessIcon, alt: 'success' })
@@ -58,6 +58,7 @@ var Main = {
                                 m('p.label_style', 'Name & Surname'),
                                 m('input.text_field', {
                                     type: 'text',
+                                    name: 'full_name',
                                     oninput: Main.handleInput
                                 }),
                             ),
@@ -65,6 +66,7 @@ var Main = {
                                 m('p.label_style', 'e-mail'),
                                 m('input.text_field', {
                                     type: 'text',
+                                    name: 'email',
                                     oninput: Main.handleInput
                                 }),
                             ),
@@ -72,6 +74,7 @@ var Main = {
                                 m('p.label_style', 'Phone'),
                                 m('input.text_field', {
                                     type: 'text',
+                                    name: 'phone',
                                     oninput: Main.handleInput
                                 }),
                             ),
@@ -79,6 +82,7 @@ var Main = {
                                 m('p.label_style', 'Drop me a line'),
                                 m('input.text_field', {
                                     type: 'text',
+                                    name: 'message',
                                     oninput: Main.handleInput
                                 }),
                             ),
