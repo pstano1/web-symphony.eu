@@ -17,6 +17,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.ts$/, // Add a rule for TypeScript files
+        use: 'ts-loader', // Use ts-loader for TypeScript files
+        exclude: /node_modules/, // Exclude node_modules directory
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'], // Add .ts extension to resolve TypeScript files
   },
 }
