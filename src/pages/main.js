@@ -49,7 +49,7 @@ var Main = {
                     m('h1', 'Want to work together?'),
                     m('h1', 'Shoot me an e-mail')
                 ),
-                m('form', { dataNetlify: true },
+                m('form', { dataNetlify: true, netlify: true, method: 'POST', onsubmit: () => Main.handleSubmit(event) },
                     m('h2', 'contact'),
                     Main.isSent ?
                         Main.isSuccess ? m('img.success', { src: SuccessIcon, alt: 'success' })
