@@ -2,6 +2,20 @@
     background-color: var(--antiflash-white);
 }
 
+.para {
+    padding: 80px 3rem 0 3rem;
+}
+
+.para > h2 {
+    margin-bottom: 1rem;
+}
+
+.para > p {
+    font-size: larger;
+    text-align: justify;
+    color: var(--rich-black);
+}
+
 .portfolio {
     display: flex;
     min-height: 70vh;
@@ -17,7 +31,6 @@
 
 @media screen and (max-width: 1024px) {
     .portfolio {
-        padding-top: 80px;
         flex-direction: column-reverse;
     }
 
@@ -46,7 +59,14 @@
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.contact_section > form > label {
+.contact_section > form > div {
+    display: flex;
+    position: relative;
+    height: fit-content;
+    flex-direction: column;  
+}
+
+.contact_section > form > div > label {
     width: 100%;
     cursor: text;
     position: relative;
@@ -92,7 +112,7 @@
     border-bottom: .15rem solid var(--aquamarine);
 }
 
-.contact_section > form > label:focus-within > p {
+.contact_section > form > div > label:focus-within > p {
     left: 0;
     bottom: 3rem;
     color: var(--aquamarine);
@@ -165,4 +185,12 @@
     bottom: 0;
     opacity: 0.5;
     transform: translateX(-10%);
+}
+
+.error {
+    filter: invert(25%) sepia(58%) saturate(1984%) hue-rotate(320deg) brightness(91%) contrast(99%);
+}
+
+.success {
+    filter: invert(70%) sepia(84%) saturate(249%) hue-rotate(85deg) brightness(100%) contrast(96%);
 }
