@@ -18,8 +18,7 @@ var Main = {
     handleSubmit: (event) => {
         event.preventDefault()
 
-        const myForm = event.target
-        const formData = new FormData(myForm)
+        const formData = new FormData(event.target)
 
         fetch('/', {
             method: 'POST',
@@ -83,7 +82,7 @@ var Main = {
                                     oninput: Main.handleInput
                                 }),
                             ),
-                            m('input', { type: 'hidden', name: 'contact', value: 'contact' }),
+                            m('input', { type: 'hidden', name: 'form-name', value: 'contact' }),
                             m('button.send_button', 'send now')
                         ),
                 ),
