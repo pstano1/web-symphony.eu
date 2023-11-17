@@ -11,7 +11,7 @@ TO-DO:
 - [ ] add portfolio 
 - [ ] adjust the mobile controlls so they look nicer
 - [ ] tests (especially for the game & contact form)
-- [ ] migrate whole application to TypeScript
+- [*] migrate whole application to TypeScript
 
 ### Tech Stack
 

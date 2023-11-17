@@ -1,8 +1,8 @@
 import m from 'mithril'
 import '../styles/nav.css'
 
-var Nav = {
-    view: (vnode) => {
+var Nav: m.Component = {
+    view: () => {
         return m('nav.nav_wrapper',
             m('nav.wrapper',
                 m('a', { href: '#!/' },

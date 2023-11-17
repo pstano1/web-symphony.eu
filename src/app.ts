@@ -7,7 +7,7 @@ import Nav from './components/nav'
 import Footer from './components/footer'
 
 const Layout = {
-    view: (vnode) => {
+    view: (vnode: m.Vnode<any, any>) => {
         return m('div.main', [
             m(Nav), 
             m(vnode.attrs.contentComponent),

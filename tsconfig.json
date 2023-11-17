@@ -1,8 +1,5 @@
 {
     "compilerOptions": {
-        "typeRoots": [
-            "../node_modules/@types"
-        ],
         "allowJs": true,
         "target": "es6",
         "lib": [

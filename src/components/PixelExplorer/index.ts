@@ -1,11 +1,8 @@
 import m from 'mithril'
 import './mazeStyle.css'
 import { Maze } from './elements/Maze'
-// @ts-ignore
 import Arrow from '../../../bin/images/icons/arrow.svg'
-// @ts-ignore
 import Close from '../../../bin/images/icons/x.svg'
-// @ts-ignore
 import Replay from '../../../bin/images/icons/repeat.svg'
 
 interface IPixelExplorer {

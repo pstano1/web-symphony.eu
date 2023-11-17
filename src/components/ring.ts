@@ -1,7 +1,13 @@
 import m from 'mithril'
 import '../styles/ring.css'
 
-const ProgressRing = {
+type ProgressRingProps = {
+    fillLevel: number,
+    title: string,
+    subtitle?: string,
+}
+
+const ProgressRing: m.Component<ProgressRingProps> = {
     view: (vnode) => {
         const fillLevel = vnode.attrs.fillLevel || 0
         const title = vnode.attrs.title || ''
@@ -9,16 +15,17 @@ const ProgressRing = {
 
         return m('div.ring_container',
             m('canvas', {
+                // @ts-ignore
                 width: 144,
                 height: 144,
-                oncreate: (canvasNode) => {
+                oncreate: (canvasNode: { dom: HTMLCanvasElement }) => {
                     const canvas = canvasNode.dom
                     const ctx = canvas.getContext('2d')
-                    var size = 144
+                    var size: number = 144
                     canvas.style.width = size + "px"
                     canvas.style.height = size + "px"
 
-                    var scale = window.devicePixelRatio
+                    var scale: number = window.devicePixelRatio
                     canvas.width = size * scale
                     canvas.height = size * scale
 
@@ -33,7 +40,7 @@ const ProgressRing = {
                     const animationSteps = 60
                     const animationStep = (targetEndAngle - initialEndAngle) / animationSteps
 
-                    const animateRing = (currentStep) => {
+                    const animateRing = (currentStep: number) => {
                         ctx.clearRect(0, 0, canvas.width, canvas.height)
 
                         const currentEndAngle = initialEndAngle + animationStep * currentStep

@@ -6,8 +6,8 @@ import CalendarIcon from '../../bin/images/icons/calendar.svg'
 
 import ProgressRing from '../components/ring'
 
-var About = {
-    view: (vnode) => {
+var About: m.Component = {
+    view: () => {
         return m('div.content',
             m('img.avatar', {
                 src: './images/gfx/profile_pic.jpg',
