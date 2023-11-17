@@ -1,4 +1,5 @@
 import m from 'mithril'
+import axios from 'axios'
 import '../styles/main.css'
 import PixelExplorer from '../components/PixelExplorer'
 import SuccessIcon from '../../bin/images/icons/check-circle.svg'
@@ -19,20 +20,27 @@ var Main = {
         event.preventDefault()
 
         const formData = new FormData(event.target)
+        let jsonData = {}
 
-        fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString(),
-        })
-            .then(() => {
-                Main.isSent = true
-                Main.isSuccess = true
+        for (let [key, value] of formData.entries()) {
+            jsonData[key] = value
+        }
+
+        axios.post('https://web-symphony-api-production.up.railway.app/contact', 
+            jsonData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }})
+            .then((response) => {
+                if (response.status === 200) {
+                    Main.isSuccess = true
+                    Main.isSent = true
+                } else {
+                    Main.isSuccess = false
+                    Main.isSent = true
+                }
             })
-            .catch((error) => {
-                Main.isSent = true
-                Main.isSuccess = false
-            })
+            .then(() => m.redraw())
     },
     view: (vnode) => {
         return m('div.main_content',
@@ -48,7 +56,7 @@ var Main = {
                     m('h1', 'Want to work together?'),
                     m('h1', 'Shoot me an e-mail')
                 ),
-                m('form', { name: 'contact', 'data-netlify': true, netlify: true, method: 'POST', onsubmit: (event) => Main.handleSubmit(event) },
+                m('form', { name: 'contact', onsubmit: (event) => Main.handleSubmit(event) },
                     m('h2', 'contact'),
                     Main.isSent ?
                         Main.isSuccess ? m('img.success', { src: SuccessIcon, alt: 'success' })
@@ -86,7 +94,6 @@ var Main = {
                                     oninput: Main.handleInput
                                 }),
                             ),
-                            m('input', { type: 'hidden', name: 'form-name', value: 'contact' }),
                             m('button.send_button', 'send now')
                         ),
                 ),

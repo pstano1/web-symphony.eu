@@ -7,6 +7,7 @@ This repository powers my company's website (self-employment) and serves as an e
 You can see deployed project [here](https://web-symphony.eu).
 
 TO-DO:
+- [ ] form validation
 - [ ] add portfolio 
 - [ ] adjust the mobile controlls so they look nicer
 - [ ] tests (especially for the game & contact form)

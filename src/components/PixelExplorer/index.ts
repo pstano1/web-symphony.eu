@@ -80,7 +80,8 @@ var PixelExplorer: IPixelExplorer = {
     },
     mazeInstance: null,
     mobileControlsVisible: false,
-    handleWSADKeys: (e: KeyboardEvent) => {
+    handleWSADKeys: (e: KeyboardEvent): void => {
+        if (PixelExplorer.mazeInstance.isFinished) return
         switch (e.key) {
             case 'a':
                 PixelExplorer.mazeInstance.movePlayer('west')
