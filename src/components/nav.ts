@@ -13,7 +13,16 @@ var Nav: m.Component = {
                     href: "#!/about-me"
                 }, 'About'),
                 m('a.nav_link', {
-                    href: 'https://web-symphony.eu/#contact',
+                    href: '#!/#contact',
+                    onclick: (event: Event): void => {
+                        const contactSection: HTMLElement = document.getElementById('contact')
+
+                        if (contactSection) {
+                            event.preventDefault()
+                            contactSection.scrollIntoView({ behavior: 'smooth' })
+                            return
+                        } 
+                    }
                 }, 'Contact')
             ),
             m('div.top_wave_decor',

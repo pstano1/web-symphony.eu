@@ -10,8 +10,8 @@ TO-DO:
 - [ ] form validation
 - [ ] add portfolio 
 - [ ] adjust the mobile controlls so they look nicer
-- [ ] tests (especially for the game & contact form)
-- [*] migrate whole application to TypeScript
+- [ ] tests (especially for the game)
+- [x] migrate whole application to TypeScript
 
 ### Tech Stack
 

@@ -13,6 +13,14 @@ interface IMainView extends m.Component {
 }
 
 var Main: IMainView = {
+    oncreate: function() {
+        if (window.location.href.indexOf('#contact') !== -1) {
+            var contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    },
     handleInput: (event: InputEvent) => {
         const input = event.target as HTMLInputElement
         const label = input.parentNode as HTMLElement
@@ -32,6 +40,7 @@ var Main: IMainView = {
         for (let [key, value] of formData.entries()) {
             jsonData[key] = value as string
         }
+        jsonData.recipient = process.env.MAIL_RECIPIENT
 
         axios.post('https://web-symphony-api-production.up.railway.app/contact', 
             jsonData, {
