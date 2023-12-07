@@ -1,8 +1,8 @@
 import m from 'mithril'
 import '../styles/nav.css'
 
-var Nav = {
-    view: (vnode) => {
+var Nav: m.Component = {
+    view: () => {
         return m('nav.nav_wrapper',
             m('nav.wrapper',
                 m('a', { href: '#!/' },
@@ -13,7 +13,16 @@ var Nav = {
                     href: "#!/about-me"
                 }, 'About'),
                 m('a.nav_link', {
-                    href: 'https://web-symphony.eu/#contact',
+                    href: '#!/#contact',
+                    onclick: (event: Event): void => {
+                        const contactSection: HTMLElement = document.getElementById('contact')
+
+                        if (contactSection) {
+                            event.preventDefault()
+                            contactSection.scrollIntoView({ behavior: 'smooth' })
+                            return
+                        } 
+                    }
                 }, 'Contact')
             ),
             m('div.top_wave_decor',

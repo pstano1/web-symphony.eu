@@ -1,7 +1,6 @@
 import m from 'mithril'
 import { MazeCell } from './MazeCell'
 import { Player, IPosition } from './Player'
-// @ts-ignore
 import FlagIcon from '../../../../bin/images/icons/flag.svg'
 
 interface IMaze {

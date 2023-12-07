@@ -5,10 +5,25 @@ import PixelExplorer from '../components/PixelExplorer'
 import SuccessIcon from '../../bin/images/icons/check-circle.svg'
 import ErrorIcon from '../../bin/images/icons/alert-circle.svg'
 
-var Main = {
-    handleInput: (event) => {
-        const input = event.target
-        const label = input.parentNode
+interface IMainView extends m.Component {
+    isSent: boolean,
+    isSuccess: boolean,
+    handleInput: (event: InputEvent) => void,
+    handleSubmit: (event: Event) => void,
+}
+
+var Main: IMainView = {
+    oncreate: function() {
+        if (window.location.href.indexOf('#contact') !== -1) {
+            var contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    },
+    handleInput: (event: InputEvent) => {
+        const input = event.target as HTMLInputElement
+        const label = input.parentNode as HTMLElement
 
         if (input.value.trim() !== '') {
             label.classList.add('input_filled')
@@ -16,15 +31,16 @@ var Main = {
             label.classList.remove('input_filled')
         }
     },
-    handleSubmit: (event) => {
+    handleSubmit: (event: Event): void => {
         event.preventDefault()
 
-        const formData = new FormData(event.target)
-        let jsonData = {}
+        const formData = new FormData(event.target as HTMLFormElement)
+        let jsonData: { [key: string]: string } = {}
 
         for (let [key, value] of formData.entries()) {
-            jsonData[key] = value
+            jsonData[key] = value as string
         }
+        jsonData.recipient = process.env.MAIL_RECIPIENT
 
         axios.post('https://web-symphony-api-production.up.railway.app/contact', 
             jsonData, {
@@ -42,7 +58,7 @@ var Main = {
             })
             .then(() => m.redraw())
     },
-    view: (vnode) => {
+    view: () => {
         return m('div.main_content',
             m('section.para',
                 m('p', 'Web Symphony Studio is a self-employment venture, therefore you can treat this website as a digital canvas and a personal portfolio of mine. Here, you\'ll witness the a symphony of my design and development skills, a testament of sort to my ongoing journey in the ever-evolving world of the web. So, whether you\'re here for inspiration or collaboration, feel free to explore my work.')
@@ -56,7 +72,7 @@ var Main = {
                     m('h1', 'Want to work together?'),
                     m('h1', 'Shoot me an e-mail')
                 ),
-                m('form', { name: 'contact', onsubmit: (event) => Main.handleSubmit(event) },
+                m('form', { name: 'contact', onsubmit: (event: Event) => Main.handleSubmit(event) },
                     m('h2', 'contact'),
                     Main.isSent ?
                         Main.isSuccess ? m('img.success', { src: SuccessIcon, alt: 'success' })

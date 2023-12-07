@@ -7,13 +7,16 @@ import GitHubIcon from '../../bin/images/icons/github.svg'
 import GitLabIcon from '../../bin/images/icons/gitlab.svg'
 import linkedInIcon from '../../bin/images/icons/linkedin.svg'
 
-var Footer = {
-    view: (vnode) => {
-        const getCurrentYear = () => {
-            let currentYear = new Date().getFullYear()
-            return currentYear
-        }
+interface IFooter extends m.Component {
+    getCurrentYear: () => number
+}
 
+var Footer: IFooter = {
+    getCurrentYear: (): number => {
+        let currentYear: number = new Date().getFullYear()
+        return currentYear
+    },
+    view: () => {
         return m('div.footer_wrapper',
             m('img.footer_logo', { src: './images/gfx/ws_logo.png', alt: 'logo' }),
             m('div.footer_content',
@@ -63,7 +66,7 @@ var Footer = {
             ),
             m('span.divider'),
             m('p.copyright',
-                m.trust(`<p>&copy; ${getCurrentYear()} Paweł Stano. This website is licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> & can be viewed on <a href="https://github.com/pstano1/web-symphony-web" target="_blank">GitHub</a>.</p>`)
+                m.trust(`<p>&copy; ${Footer.getCurrentYear()} Paweł Stano. This website is licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> & can be viewed on <a href="https://github.com/pstano1/web-symphony-web" target="_blank">GitHub</a>.</p>`)
             )
         )
     }
